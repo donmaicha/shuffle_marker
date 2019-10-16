@@ -15,6 +15,8 @@
 		584ACDA72344C7B400FF5620 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 584ACDA52344C7B400FF5620 /* LaunchScreen.storyboard */; };
 		584ACDB22344C7B400FF5620 /* shuffle_markerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584ACDB12344C7B400FF5620 /* shuffle_markerTests.swift */; };
 		584ACDBD2344C7B400FF5620 /* shuffle_markerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584ACDBC2344C7B400FF5620 /* shuffle_markerUITests.swift */; };
+		584ACDCB23477B8300FF5620 /* card_draw.png in Resources */ = {isa = PBXBuildFile; fileRef = 584ACDCA23477B8300FF5620 /* card_draw.png */; };
+		584ACDCD23477BA000FF5620 /* card_shuffle.png in Resources */ = {isa = PBXBuildFile; fileRef = 584ACDCC23477BA000FF5620 /* card_shuffle.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		584ACDB82344C7B400FF5620 /* shuffle_markerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = shuffle_markerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		584ACDBC2344C7B400FF5620 /* shuffle_markerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shuffle_markerUITests.swift; sourceTree = "<group>"; };
 		584ACDBE2344C7B400FF5620 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		584ACDCA23477B8300FF5620 /* card_draw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_draw.png; sourceTree = "<group>"; };
+		584ACDCC23477BA000FF5620 /* card_shuffle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_shuffle.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				584ACD9A2344C7B200FF5620 /* AppDelegate.swift */,
 				584ACD9C2344C7B200FF5620 /* SceneDelegate.swift */,
 				584ACD9E2344C7B200FF5620 /* ViewController.swift */,
+				584ACDCC23477BA000FF5620 /* card_shuffle.png */,
+				584ACDCA23477B8300FF5620 /* card_draw.png */,
 				584ACDA02344C7B200FF5620 /* Main.storyboard */,
 				584ACDA32344C7B400FF5620 /* Assets.xcassets */,
 				584ACDA52344C7B400FF5620 /* LaunchScreen.storyboard */,
@@ -232,9 +238,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				584ACDCD23477BA000FF5620 /* card_shuffle.png in Resources */,
 				584ACDA72344C7B400FF5620 /* LaunchScreen.storyboard in Resources */,
 				584ACDA42344C7B400FF5620 /* Assets.xcassets in Resources */,
 				584ACDA22344C7B200FF5620 /* Main.storyboard in Resources */,
+				584ACDCB23477B8300FF5620 /* card_draw.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +443,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D32L54FCAB;
 				INFOPLIST_FILE = shuffle_marker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,6 +461,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D32L54FCAB;
 				INFOPLIST_FILE = shuffle_marker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
