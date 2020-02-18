@@ -7,23 +7,23 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
-    let myView = UIImageView()
+    @IBOutlet weak var myView: UIImageView!
+    var audioPlayer : AVAudioPlayer!
+    
+    // 背景色(緑)
+    let bgGreen = UIColor(red: 143/255, green: 180/255, blue: 139/255, alpha: 1.0)
+    // 背景色(赤)
+    let bgRed = UIColor(red: 175/255, green: 117/255, blue: 96/255, alpha: 1.0)
+    // shuffleモードかどうか
     var isShuffle = false
-
+    
     /// コンストラクタ
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(red: 143/255, green: 180/255, blue: 139/255, alpha: 1.0)
-
-        //set view
-        myView.frame = CGRect(x: 0, y: 0, width: 350, height: 600)
-        myView.center = view.center
-        myView.image = UIImage(named: "card_draw")
-        view.addSubview(myView)
-
         // UIGestureのインスタンス
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped(_:)))
         
@@ -47,6 +47,8 @@ class ViewController: UIViewController {
     @objc func rotateCard() {
         // 二重タップ防止
         self.view.isUserInteractionEnabled = false
+        
+        playMp3(target: "card-turn-over1")
 
         UIView.animate(withDuration: 0.5, animations: {
             // first transform
@@ -68,14 +70,30 @@ class ViewController: UIViewController {
     func changeImge() {
         if isShuffle {
             self.myView.image = UIImage(named: "card_draw")
-            self.view.backgroundColor = UIColor(red: 143/255, green: 180/255, blue: 139/255, alpha: 1.0)
+            self.view.backgroundColor = bgGreen
             isShuffle = false
         } else {
             self.myView.image = UIImage(named: "card_shuffle")
-            self.view.backgroundColor = UIColor(red: 175/255, green: 117/255, blue: 96/255, alpha: 1.0)
+            self.view.backgroundColor = bgRed
             isShuffle = true
         }
         
+    }
+    
+    /// MP３ファイルの再生処理
+    /// - parameter target: 再生したいファイル名
+    func playMp3(target:String) {
+        // mp3を再生する
+        if let url = Bundle.main.url(forResource: target, withExtension: "mp3") {
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer.play()
+            } catch {
+                audioPlayer = nil
+            }
+        } else {
+            fatalError("Url is nil")
+        }
     }
 }
 
