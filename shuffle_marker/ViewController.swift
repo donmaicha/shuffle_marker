@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  shuffle_marker
 //
-//  Created by 福島拓希 on 2019/10/02.
-//  Copyright © 2019 福島拓希. All rights reserved.
+//  Created by donmaicha on 2019/10/02.
+//  Copyright © 2019 donmaicha. All rights reserved.
 //
 
 import UIKit
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
     }
     
     /// カードをくるっとひっくり返すアニメーション
-    @objc func rotateCard() {
+    func rotateCard() {
         // 二重タップ防止
         self.view.isUserInteractionEnabled = false
         
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
                 // second transform
                 self.myView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
             }, completion:{ (finished: Bool) in
-                // 二重タップ防止　解除
+                // 二重タップ防止 解除
                 self.view.isUserInteractionEnabled = true
             })
         })
@@ -94,6 +94,7 @@ class ViewController: UIViewController {
         } else {
             fatalError("Url is nil")
         }
+        
     }
 }
 
