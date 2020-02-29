@@ -21,6 +21,12 @@ class ViewController: UIViewController {
     // shuffleモードかどうか
     var isShuffle = false
     
+    // 何秒shuffleモードを表示するか
+    var shuffleModeTime: Double = 10.0
+    
+    // shuffleモードタイマー
+    var shuffleModeTimer: Timer? = nil
+    
     /// コンストラクタ
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,12 +78,37 @@ class ViewController: UIViewController {
             self.myView.image = UIImage(named: "card_draw")
             self.view.backgroundColor = bgGreen
             isShuffle = false
+            // タイマーを停止する
+            shuffleModeTimer?.invalidate()
         } else {
             self.myView.image = UIImage(named: "card_shuffle")
             self.view.backgroundColor = bgRed
             isShuffle = true
+            shuffleModeTimer = Timer.scheduledTimer(timeInterval: shuffleModeTime, target: self, selector: #selector(self.ShowPopup), userInfo: nil, repeats: false)
         }
         
+    }
+    
+    @objc func ShowPopup() {
+        alert(title: "確認", message: "シャッフルしましたか?")
+    }
+    
+    var alertController: UIAlertController!
+    func alert(title:String, message:String) {
+        alertController = UIAlertController(title: title,
+                                   message: message,
+                                   preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "YES",
+                                       style: .default,
+                                       handler: {
+                                           // ボタンが押された時の処理を書く（クロージャ実装）
+                                           (action: UIAlertAction!) -> Void in
+                                        self.rotateCard()
+                                       }))
+        alertController.addAction(UIAlertAction(title: "NO",
+                                       style: .default,
+                                       handler: nil))
+        present(alertController, animated: true)
     }
     
     /// MP３ファイルの再生処理
