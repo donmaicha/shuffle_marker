@@ -2,8 +2,8 @@
 //  SettingTableViewController.swift
 //  shuffle_marker
 //
-//  Created by 福島拓希 on 2020/03/01.
-//  Copyright © 2020 福島拓希. All rights reserved.
+//  Created by donmaicha on 2020/03/01.
+//  Copyright © 2020 donmaicha. All rights reserved.
 //
 
 import UIKit
