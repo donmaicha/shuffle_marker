@@ -89,10 +89,14 @@ class ViewController: UIViewController {
         
     }
     
+    /// ダイアログ表示
     @objc func ShowPopup() {
         alert(title: "確認", message: "シャッフルしましたか?")
     }
     
+    /// YesNoダイアログ作成
+    /// - parameter title: タイトル
+    /// - parameter message: 内容
     var alertController: UIAlertController!
     func alert(title:String, message:String) {
         alertController = UIAlertController(title: title,
