@@ -10,14 +10,12 @@ import UIKit
 
 class SettingTableViewController: UITableViewController {
 
+    @IBOutlet var AlertVisibleSwitch: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        let visibllty = UserDefaults.standard.bool(forKey: "alertVisibllty")
+        //AlertVisibleSwitch.setOn(true, animated: false)
     }
 
     // MARK: - Table view data source
@@ -29,9 +27,21 @@ class SettingTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        var ret: Int = 0
+        
+        switch section {
+        case 0:
+            ret = 2
+        default:
+            ret = 0
+        }
+        return ret
     }
 
+    @IBAction func ChangeAlertVisibllty(_ sender: Any) {
+        let aaa:Bool = (sender as AnyObject).isOn
+        UserDefaults.standard.set(aaa, forKey: "alertVisibllty")
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
