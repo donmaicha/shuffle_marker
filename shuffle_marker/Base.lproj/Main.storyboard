@@ -73,7 +73,7 @@
                                                     <rect key="frame" x="317" y="6.5" width="49" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
-                                                        <action selector="ChangeAlertVisibllty:" destination="5fo-4z-TiS" eventType="valueChanged" id="9x1-xf-aCR"/>
+                                                        <action selector="ChangeAlertVisibllty:" destination="5fo-4z-TiS" eventType="valueChanged" id="gJU-8h-907"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -112,6 +112,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="G1y-bc-agX"/>
                     <connections>
+                        <outlet property="AlertVisibleSwitch" destination="rrA-cV-l72" id="y1U-6M-gxk"/>
                         <outletCollection property="AlertVisibleSwitch" destination="rrA-cV-l72" collectionClass="NSMutableArray" id="UwY-53-DRR"/>
                     </connections>
                 </tableViewController>

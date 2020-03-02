@@ -10,12 +10,13 @@ import UIKit
 
 class SettingTableViewController: UITableViewController {
 
-    @IBOutlet var AlertVisibleSwitch: UISwitch!
+    
+    @IBOutlet weak var AlertVisibleSwitch: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let visibllty = UserDefaults.standard.bool(forKey: "alertVisibllty")
-        //AlertVisibleSwitch.setOn(true, animated: false)
+        AlertVisibleSwitch.setOn(visibllty, animated: false)
     }
 
     // MARK: - Table view data source
