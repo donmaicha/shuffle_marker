@@ -84,7 +84,9 @@ class ViewController: UIViewController {
             self.myView.image = UIImage(named: "card_shuffle")
             self.view.backgroundColor = bgRed
             isShuffle = true
-            shuffleModeTimer = Timer.scheduledTimer(timeInterval: shuffleModeTime, target: self, selector: #selector(self.ShowPopup), userInfo: nil, repeats: false)
+            if (UserDefaults.standard.bool(forKey: "alertVisibllty")) {
+                            shuffleModeTimer = Timer.scheduledTimer(timeInterval: shuffleModeTime, target: self, selector: #selector(self.ShowPopup), userInfo: nil, repeats: false)
+            }
         }
         
     }
