@@ -87,6 +87,7 @@ class ViewController: UIViewController {
             if (UserDefaults.standard.bool(forKey: "alertVisibllty")) {
                             shuffleModeTimer = Timer.scheduledTimer(timeInterval: shuffleModeTime, target: self, selector: #selector(self.ShowPopup), userInfo: nil, repeats: false)
             }
+
         }
         
     }

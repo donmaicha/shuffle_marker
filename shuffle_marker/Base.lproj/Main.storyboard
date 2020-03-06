@@ -113,6 +113,7 @@
                     <navigationItem key="navigationItem" id="G1y-bc-agX"/>
                     <connections>
                         <outlet property="AlertVisibleSwitch" destination="rrA-cV-l72" id="y1U-6M-gxk"/>
+                        <outlet property="timeTextBox" destination="6SM-ZS-ONC" id="sdH-14-fTT"/>
                         <outletCollection property="AlertVisibleSwitch" destination="rrA-cV-l72" collectionClass="NSMutableArray" id="UwY-53-DRR"/>
                     </connections>
                 </tableViewController>

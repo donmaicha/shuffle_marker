@@ -10,13 +10,17 @@ import UIKit
 
 class SettingTableViewController: UITableViewController {
 
+    @IBOutlet weak var timeTextBox: UITextField!
     
+    var alertVisibllty:Bool = UserDefaults.standard.bool(forKey: "alertVisibllty")
     @IBOutlet weak var AlertVisibleSwitch: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let visibllty = UserDefaults.standard.bool(forKey: "alertVisibllty")
-        AlertVisibleSwitch.setOn(visibllty, animated: false)
+        self.timeTextBox.keyboardType = UIKeyboardType.numberPad
+        
+        alertVisibllty = UserDefaults.standard.bool(forKey: "alertVisibllty")
+        AlertVisibleSwitch.setOn(alertVisibllty, animated: false)
     }
 
     // MARK: - Table view data source
