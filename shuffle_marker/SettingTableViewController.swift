@@ -44,8 +44,8 @@ class SettingTableViewController: UITableViewController {
     }
 
     @IBAction func ChangeAlertVisibllty(_ sender: Any) {
-        let aaa:Bool = (sender as AnyObject).isOn
-        UserDefaults.standard.set(aaa, forKey: "alertVisibllty")
+        let isOnShowSwitch:Bool = (sender as AnyObject).isOn
+        UserDefaults.standard.set(isOnShowSwitch, forKey: "alertVisibllty")
     }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
